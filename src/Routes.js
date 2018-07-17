@@ -19,6 +19,11 @@ const About = Loadable({
   loading: Loading,
 });
 
+const Form = Loadable({
+  loader: () => import('./components/Form'),
+  loading: Loading,
+});
+
 const NotFound = Loadable({
   loader: () => import('./components/NotFound'),
   loading: Loading,
@@ -30,6 +35,7 @@ const Routes = () => (
       <Route exact path="/" component={Home} />
       <Route path="/counter" component={Counter}/>
       <Route path="/about" component={About}/>
+      <Route path="/form" component={Form}/>
       <Route path="*" component={NotFound}/>
     </Switch>
   </BrowserRouter>

@@ -1,20 +1,36 @@
 import React from 'react';
-import logo from '../assets/img/logo.svg';
+//import logo from '../assets/img/logo.svg';
+// material ui
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginLeft: -18,
+    marginRight: 10,
+  },
+});
 class Header extends React.Component {
   render() {
   return (
-    <header className="header fixed flex flex-space-between">
-      <div className="logo-wrapper">
-        <img className="logo" alt="logo" src={logo}/>
-        <h4 className="titre">My-Logo</h4>
-      </div>
-      <ul className="nav-flex mr20">
-        <li><a href="/">Home</a></li>
-        <li><a href="/counter">Counter</a></li>
-        <li><a href="/about">About</a></li>
-      </ul>
-    </header>
+    <div>
+       <AppBar position="static">
+         <Toolbar variant="dense">
+          <IconButton className={styles.menuButton} color="inherit" aria-label="Menu">
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="title" color="inherit">
+            MY-APP
+          </Typography>
+        </Toolbar>
+       </AppBar>
+     </div>
     )
   };
 };
