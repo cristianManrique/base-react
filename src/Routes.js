@@ -29,6 +29,11 @@ const Movies = Loadable({
   loading: Loading,
 });
 
+const Dialog = Loadable({
+  loader: () => import('./components/Dialog'),
+  loading: Loading,
+});
+
 const NotFound = Loadable({
   loader: () => import('./components/NotFound'),
   loading: Loading,
@@ -42,6 +47,7 @@ const Routes = () => (
       <Route path="/about" component={About}/>
       <Route path="/form" component={Form}/>
       <Route path="/movies" component={Movies}/>
+      <Route path="/dialog" component={Dialog}/>
       <Route path="*" component={NotFound}/>
     </Switch>
   </BrowserRouter>
